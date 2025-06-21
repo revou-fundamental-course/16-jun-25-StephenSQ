@@ -1,7 +1,7 @@
 /* FONT SETUP - agdasima-400 - latin */
 @font-face {
   font-display: swap;
-  font-family: 'Agdasima';
+  font-family: 'agdasima';
   font-style: normal;
   font-weight: 400;
   src: url('../assets/fonts/agdasima-v5-latin-regular.woff2') format('woff2');
@@ -9,19 +9,31 @@
 /* FONT SETUP - agdasima-700 - latin */
 @font-face {
   font-display: swap;
-  font-family: 'Agdasima';
+  font-family: 'agdasima';
   font-style: normal;
   font-weight: 700;
   src: url('../assets/fonts/agdasima-v5-latin-700.woff2') format('woff2');
 }
-
-.fancy {
-  font-family: 'Agdasima', sans-serif;
+/* FONT SETUP - pt-sans-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/pt-sans-v17-latin-regular.woff2') format('woff2');
+}
+/* FONT SETUP - pt-sans-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/pt-sans-v17-latin-700.woff2') format('woff2');
 }
 
 :root {
     /* Defined Colors */
-    --opq-red: rgba(255, 51, 51, 0.8);
+    --opq-red: rgb(250, 44, 99);
 }
 * {
     margin: 0;
@@ -33,7 +45,8 @@
 body {
     display: flex;
     font-family: 'PT Sans', sans-serif;
-    font-size: 20px;
+    font-weight: 400;
+    font-size: medium;
 }
 header, div {
     display: flex;
@@ -173,7 +186,7 @@ footer a:hover {
 }
 /*. . . . . . . . . . ARRIVAL PAGE */
 #ARRIVAL {
-    background: #fff url('./Assets/Images/welcome.png') no-repeat fixed center center / cover;
+    background: #fff url('../assets/pictures/CoastingSunset.png') no-repeat fixed center center / cover;
 }
 .paragraph {
     margin: 0 4%;
