@@ -17,7 +17,7 @@
 /* FONT SETUP - pt-sans-regular - latin */
 @font-face {
   font-display: swap;
-  font-family: 'PT Sans';
+  font-family: 'pt-sans';
   font-style: normal;
   font-weight: 400;
   src: url('../assets/fonts/pt-sans-v17-latin-regular.woff2') format('woff2');
@@ -25,15 +25,31 @@
 /* FONT SETUP - pt-sans-700 - latin */
 @font-face {
   font-display: swap;
-  font-family: 'PT Sans';
+  font-family: 'pt-sans';
   font-style: normal;
   font-weight: 700;
   src: url('../assets/fonts/pt-sans-v17-latin-700.woff2') format('woff2');
 }
+/* SVG GRAPHICS SETUP */
+.icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: currentColor; /* So you can use .icon { color: red } */
+    fill: none;           /* Most line icons like Lucide or Tabler don't use fill */
+    stroke-width: 2;
+    vertical-align: middle;
+}
+.tab .icon, .icon-instagram, .icon-github {
+    margin-right: 8px;
+} 
+
+html {
+  font-size: 62.5%;   /*for font management to set all rem values: 1 rem = 10px*/
+}
 
 :root {
     /* Defined Colors */
-    --opq-red: rgb(250, 44, 99);
+    --opq-red: rgb(202, 30, 76);
 }
 * {
     margin: 0;
@@ -44,9 +60,9 @@
 }
 body {
     display: flex;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'pt-sans', sans-serif;
     font-weight: 400;
-    font-size: medium;
+    font-size: 2.1rem;
 }
 header, div {
     display: flex;
@@ -80,7 +96,7 @@ main {
     box-shadow: 4px 0 8px 0 #d3513a;
     position: sticky;
     overflow-y: auto;
-    flex: 0 0 350px;
+    flex: 0 0 300px;
     z-index: 1;
     top: 0;
     padding: 64px 28px;
@@ -92,33 +108,29 @@ main {
     margin: 32px 0px 8px 0px;
     border-bottom: 2px ridge #fff;
 }
-.topic .fa-solid {
-    margin: 0px 16px;
-}
-.fa-solid, .fa-regular {
-    margin-right: 8px;
-}
-.fa-brands {
-    font-size: 1.5em;
-    margin-right: 8px;
+.topic .icon {
+    margin: 0px 8px;
 }
 /*. . . . . . . . . . HEADER */
 header div {
-    font-family: 'Major Mono Display', monospace;
+    font-family: 'agdasima', sans-serif;
     flex-direction: row;
     justify-content: space-between;
 }
 .heading {
-    margin-bottom: 8px;
+    font-size: 4rem;
+    align-items: center;
 }
 .heading img {
-    width: 35px;
-    height: 35px;
+    width: 53px;
+    height: 53px;
+    border-radius: 100%;
 }
 .subheading {
     border-bottom: 4px double #fff;
     padding-bottom: 8px;
     margin-bottom: 16px;
+    font-size: 2.3rem;
 }
 #MENU {
     display: none;
@@ -173,7 +185,7 @@ footer a:hover {
     display: inline-block;
     position: relative;
     transform: skewX(-40deg);
-    left: -6%;
+    left: -15rem;
     background-color: #cc0033;
     box-shadow: 100px 0px 40px #ff8820 inset;
     border-right: 32px double #ff8820;
@@ -194,7 +206,7 @@ footer a:hover {
     text-indent: 2em;
     border-radius: 8px;
     border: 2px double #fff;
-    background-color: rgba(0, 0 ,0 ,0.2);
+    background-color: rgba(0, 0 ,0 ,0.4);
 }
 
 /* work in progress */
