@@ -125,10 +125,10 @@ footer a:hover {
 }
 
 /* work in progress */
-#MINESWEEPER, #CREDITS, #CIPHER {
+#CREDITS, #TRIANGLESQ {
     padding: 0;
 }
-#MINESWEEPER div, #CREDITS div, #CIPHER div {
+#CREDITS div, #TRIANGLESQ div {
     background-color: #303030;
     display: flex;
     justify-content: center;
