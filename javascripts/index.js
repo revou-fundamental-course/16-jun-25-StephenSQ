@@ -7,7 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
     tabButton = document.getElementsByClassName('tab');
     tabContent = document.getElementsByClassName('tab-content');
 
-    // Add EventListeners
+    // landing screen dissappears on click and triggers bg music
+    let land_screen = document.getElementById("LANDING-SCREEN");
+    land_screen.addEventListener("click", () => {
+        document.getElementById("MUSIC-COAST").play();
+
+        land_screen.classList.add("fade-out");
+        // display none, perfectly timed with the CSS transition
+        setTimeout(() => {
+            land_screen.style.display = "none";
+        }, 500); // CSS transition 0.5s
+    }, { once: true }); // once: true will delete the event listener after it's triggered once
+
+    // Add active EventListeners
     for (let i = 0; i < tabButton.length; i++) {
         // the key is that tabButton and tabContent elements are in the same order in the html n css files
         tabButton[i].addEventListener('click', () => { switchTab(tabButton[i], tabContent[i]) });
@@ -32,29 +44,36 @@ document.addEventListener('DOMContentLoaded', () => {
     injectSVG('.icon-github', '../assets/graphics/github.svg');
     injectSVG('.icon-instagram', '../assets/graphics/instagram.svg');
     injectSVG('.icon-user', '../assets/graphics/user.svg');
-});
+}, { once: true }); // once: true can be used for any EventListener that only requires to be called once.
+
 // svg graphics injection to elements
 const svgCache = {};
 async function injectSVG(targetSelector, filePath) {
     try {
-        // AASSSSSSSSSSSSKKKK
-        let svgText = svgCache[filePath];
-
+        // ... so what does svgCache store when svgCache[filePath] ?
+        let svgText = svgCache[filePath]; // this line's purpose seem to just be so if (!svgText) works as intended ?
+        // if svgText is NOT empty... can I just use !filePath ?
         if (!svgText) {
+            // ok so await waits for fetch to finish fetching ?
+            // then what data type does fetch return and gets stored in res ? the actual svg graphics ?
             const res = await fetch(filePath);
+            // .ok checks if fetch returns resolved(ok) or rejected(not ok) ? isnt res the contents of an svg now ?
             if (!res.ok) throw new Error(`Failed to load ${filePath}`);
+            // so what is the data type and value of res.text ? finally the actual svg ?
             svgText = await res.text();
-            svgCache[filePath] = svgText;
+            svgCache[filePath] = svgText;// .. this line seems obsolete and pointless ?
         }
         // inject svgs for each element with the target
         const targets = document.querySelectorAll(targetSelector);
         targets.forEach(el => {
+            // ok so this is where the innerHTML becomes the literal svg ?
             el.innerHTML = svgText;
         });
-
-  } catch (err) {
-    console.error(err);
-  }
+    }
+    // err is just a placeholder variable for catch to work ?
+    catch (err) {
+        console.error(err);
+    }
 }
 
 // a function for NAVBAR's tab switching buttons. NOTE : the order of buttons and its corresponding content must be the same because this function is order dependant
