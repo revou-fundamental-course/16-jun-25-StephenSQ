@@ -36,14 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // trigger the resize event so the code inside the EventListener above is executed
     window.dispatchEvent(new Event('resize'));
 
-    // svg injection to use svg graphics stuff
-    injectSVG('.icon-house', '../assets/graphics/house.svg');
-    injectSVG('.icon-credit', '../assets/graphics/credit.svg');
-    injectSVG('.icon-calc', '../assets/graphics/calculator.svg');
-    injectSVG('.icon-triangle', '../assets/graphics/triangle.svg');
-    injectSVG('.icon-github', '../assets/graphics/github.svg');
-    injectSVG('.icon-instagram', '../assets/graphics/instagram.svg');
-    injectSVG('.icon-user', '../assets/graphics/user.svg');
+    // svg injection to use svg graphics stuff, the file location is used by fetch() which root from the repository, not relative to its file location
+    injectSVG('.icon-house', './assets/graphics/house.svg');
+    injectSVG('.icon-credit', './assets/graphics/credit.svg');
+    injectSVG('.icon-calc', './assets/graphics/calculator.svg');
+    injectSVG('.icon-triangle', './assets/graphics/triangle.svg');
+    injectSVG('.icon-github', './assets/graphics/github.svg');
+    injectSVG('.icon-instagram', './assets/graphics/instagram.svg');
+    injectSVG('.icon-user', './assets/graphics/user.svg');
 }, { once: true }); // once: true can be used for any EventListener that only requires to be called once.
 
 // svg graphics injection to elements
