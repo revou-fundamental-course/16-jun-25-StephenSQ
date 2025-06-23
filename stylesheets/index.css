@@ -111,24 +111,42 @@ footer a:hover {
     transform: skewX(40deg);
     margin: 8px 64px 8px 250px;
 }
-/*. . . . . . . . . . ARRIVAL PAGE */
-#ARRIVAL {
-    background: #fff url('../assets/pictures/CoastingSunset.png') no-repeat fixed center center / cover;
-}
 .paragraph {
-    margin: 0 4%;
+    margin: 0 6%;
     padding: 1em;
     text-indent: 2em;
     border-radius: 8px;
     border: 2px double #fff;
-    background-color: rgba(0, 0 ,0 ,0.4);
+    background-color: rgba(0, 0 ,0 ,0.6);
+    font-size: 2.5rem;
 }
-
+.paragraph p {
+    margin: 2rem 0;
+}
+/*. . . . . . . . . . ARRIVAL PAGE . . . . . . . . . .*/
+#ARRIVAL {
+    background: #fff url('../assets/pictures/CoastingSunset.png') no-repeat fixed center center / cover;
+}
+#ARRIVAL .images {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    margin: 2rem 6%;
+}
+.images img {
+    height: auto;
+    width: auto;
+}
+/*. . . . . . . . . . CREDIT PAGE . . . . . . . . . .*/
+#CREDITS {
+    background: #fff url('../assets/pictures/luv-it.png') no-repeat fixed center center / cover;
+}
 /* work in progress */
-#CREDITS, #TRIANGLESQ {
+#TRIANGLESQ {
     padding: 0;
 }
-#CREDITS div, #TRIANGLESQ div {
+#TRIANGLESQ div {
     background-color: #303030;
     display: flex;
     justify-content: center;
