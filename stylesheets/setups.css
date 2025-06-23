@@ -108,3 +108,7 @@ img {
     opacity: 0;
     visibility: hidden;
 }
+/* for the i love the view button, gives smooth animation to disappear */
+.contents {
+  transition: .3s ease-out;
+}

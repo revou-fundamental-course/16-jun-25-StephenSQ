@@ -9,15 +9,12 @@
     flex-direction: column;
     color: #fff;
     background-color: #000;
-    border-right: 4px double #9c2010;
-    box-shadow: 4px 0 8px 0 #d3513a;
     position: sticky;
     overflow-y: auto;
     flex: 0 0 300px;
     z-index: 1;
     top: 0;
     padding: 64px 28px;
-
 }
 .topic {
     text-align: center;
@@ -66,18 +63,25 @@ header div {
     transition: .3s ease-out;
     padding: 4px 8px;
 }
-.tab:hover {
+.tab:hover, #COOL:hover {
     color: #fff;
     background-color: #7070ff;
     box-shadow: 45px 0px 40px #70adad inset;
     text-shadow: 2px 2px 4px #303030;
     scale: 1.05;
 }
-.tab.active {
+.tab.active, #COOL.active {
     background-color: #cc0052;
     box-shadow: 45px 0px 40px #ff8820 inset;
     text-shadow: 2px 2px 4px #303030;
     scale: 1.05;
+}
+/*. . . . . . . . . . I LOVE THE VIEW */
+#COOL {
+    font-weight: 700;
+    border: .5rem ridge #fff;
+    border-radius: 2rem;
+    transition: .5s ease-out;
 }
 /*. . . . . . . . . . FOOTER */
 footer a:hover {

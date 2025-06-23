@@ -1,11 +1,13 @@
 // make element variables
-let NAVBAR, CONTENT, tabButton, tabContent;
+let NAVBAR, CONTENT, tabButton, tabContent, coolView, tabContentAmount;
 document.addEventListener('DOMContentLoaded', () => {
     // Define element variables after everything is loaded
     NAVBAR = document.getElementById('NAVBAR');
-    CONTENT = document.getElementById('CONTENT');
+    COOLVIEW = document.getElementById('COOL');
+    contents = document.getElementsByClassName('contents'); // for the I love the view button
     tabButton = document.getElementsByClassName('tab');
     tabContent = document.getElementsByClassName('tab-content');
+
 
     // landing screen dissappears on click and triggers bg music
     let land_screen = document.getElementById("LANDING-SCREEN");
@@ -19,12 +21,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500); // CSS transition 0.5s
     }, { once: true }); // once: true will delete the event listener after it's triggered once
 
-    // Add active EventListeners
-    for (let i = 0; i < tabButton.length; i++) {
+
+    // Add active EventListeners for the tab switching mechanism
+    let tabButtonAmount = tabButton.length;
+    for (let i = 0; i < tabButtonAmount; i++) {
         // the key is that tabButton and tabContent elements are in the same order in the html n css files
         tabButton[i].addEventListener('click', () => { switchTab(tabButton[i], tabContent[i]) });
     }
 
+
+    // The button for the I LOVE THE VIEW button lmao
+    let toggleCOOLVIEW = false;
+    let contentsAmount = contents.length;
+    COOLVIEW.addEventListener('click', () => {
+        toggleCOOLVIEW = !toggleCOOLVIEW;
+        if (toggleCOOLVIEW) {
+            for (let i = 0; i < contentsAmount; i++) {
+                contents[i].style.opacity = '0.0';
+            }
+            NAVBAR.style.opacity = '0.1';
+            NAVBAR.style.position = 'fixed';
+            COOLVIEW.classList.add('active');
+        }
+        else {
+            for (let i = 0; i < contentsAmount; i++) {
+                contents[i].style.opacity = '1.0';
+            }
+            NAVBAR.style.opacity = '1.0';
+            NAVBAR.style.position = 'sticky';
+            COOLVIEW.classList.remove('active');
+        }
+    });
     // Make the Arrival tab as initial tab with switchTab
     tabButton[0].click()
 
@@ -44,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     injectSVG('.icon-github', './assets/graphics/github.svg');
     injectSVG('.icon-instagram', './assets/graphics/instagram.svg');
     injectSVG('.icon-user', './assets/graphics/user.svg');
+    injectSVG('.icon-camera', './assets/graphics/camera.svg');
 }, { once: true }); // once: true can be used for any EventListener that only requires to be called once.
 
 // svg graphics injection to elements
