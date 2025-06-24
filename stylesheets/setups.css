@@ -84,6 +84,25 @@ img {
   height: 100%;
   width: 100%;
 }
+input {
+  position: relative;
+  transition: .3s ease-out;
+  overflow: hidden;
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  font: inherit;
+  text-align: left;
+  border: none;
+  border-radius: inherit;
+  padding: 0 2rem;
+}
+/* remove that 'spin-button' arrow default stuff */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 /* that opaque landing screen to make users click and trigger music */
 #LANDING-SCREEN {
     position: fixed;

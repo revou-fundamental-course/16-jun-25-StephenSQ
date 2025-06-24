@@ -67,13 +67,13 @@ header div {
     transition: .3s ease-out;
     padding: 4px 8px;
 }
-.tab:hover, #COOL:hover {
+.tab:hover, #COOL:hover, #TRI-CALCULATE {
     background-color: var(--tab-hover-background);
     box-shadow: 45px 0px 40px var(--tab-hover-gradient) inset;
     text-shadow: 2px 2px 4px var(--text-shadows);
     scale: 1.05;
 }
-.active {
+.active, #TRI-CALCULATE:hover {
     background-color: var(--active-background);
     box-shadow: 45px 0px 40px var(--active-gradient) inset;
     text-shadow: 2px 2px 4px var(--text-shadows);
@@ -156,6 +156,38 @@ footer a:hover {
 /* work in progress */
 #TRIANGLESQ {
     background: #fff url('../assets/pictures/pic3.png') no-repeat fixed center center / cover;
+}
+input::placeholder {
+    color: var(--active-background);
+}
+.inputs-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--tab-content-texts);
+    font-family: 'agdasima', sans-serif;
+    font-size: 3rem;
+}
+.inputs-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--active-background);
+    border-radius: 5rem;
+    margin: 0.5rem;
+    padding: 0.1rem;
+}
+#TRIANGLE-INPUT-BASE {
+    background-color: var(--active-gradient);
+}
+#TRIANGLE-INPUT-HEIGHT {
+    background-color: var(--active-gradient);
+}
+#TRI-CALCULATE {
+    transition: .3s ease-out;
+    border-radius: 2rem;
+    margin: 0rem 3rem;
+    padding: 1rem;
 }
 /* This is styling connected to asset-setups definitions */
 .topic .icon {
