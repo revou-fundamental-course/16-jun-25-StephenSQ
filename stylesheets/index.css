@@ -1,14 +1,24 @@
 :root {
-    /* Defined Colors */
-    --opq-red: rgb(202, 30, 76);
+    /* Colors of elements */
+    --NAVBAR-texts: #fff;
+    --NAVBAR-bgcolor: #000;
+    --text-shadows: #303030;
+    --tab-hover-background: #7070ff;
+    --tab-hover-gradient: #70adad;
+    --active-background: #cc0052;
+    --active-gradient: #ff8820;
+    --footer-hover-background: #405DE6;
+    --footer-hover-gradient: #833AB4;
+    --tab-content-texts: #fff;
+    --paragraph-transparent-bg: rgba(0, 0 ,0 ,0.6);
 }
 
 /*-_-_-_-_-_-_-_-_-_-_ NAVBAR -_-_-_-_-_-_-_-_-_-_*/
 #NAVBAR {
     display: flex;
     flex-direction: column;
-    color: #fff;
-    background-color: #000;
+    color: var(--NAVBAR-texts);
+    background-color: var(--NAVBAR-bgcolor);
     position: sticky;
     overflow-y: auto;
     flex: 0 0 300px;
@@ -20,7 +30,7 @@
     text-align: center;
     padding-bottom: 4px;
     margin: 32px 0px 8px 0px;
-    border-bottom: 2px ridge #fff;
+    border-bottom: 2px ridge var(--NAVBAR-texts);
 }
 /*. . . . . . . . . . HEADER */
 header div {
@@ -39,16 +49,10 @@ header div {
     border-radius: 100%;
 }
 .subheading {
-    border-bottom: 4px double #fff;
+    border-bottom: 4px double var(--NAVBAR-texts);
     padding-bottom: 8px;
     margin-bottom: 16px;
     font-size: 2.3rem;
-}
-#MENU {
-    display: none;
-    width: 100px;
-    aspect-ratio: 1 / 1;
-    background-color: #cc0033;
 }
 /*. . . . . . . . . . CONTENTS */
 #CONTENTS {
@@ -64,31 +68,29 @@ header div {
     padding: 4px 8px;
 }
 .tab:hover, #COOL:hover {
-    color: #fff;
-    background-color: #7070ff;
-    box-shadow: 45px 0px 40px #70adad inset;
-    text-shadow: 2px 2px 4px #303030;
+    background-color: var(--tab-hover-background);
+    box-shadow: 45px 0px 40px var(--tab-hover-gradient) inset;
+    text-shadow: 2px 2px 4px var(--text-shadows);
     scale: 1.05;
 }
-.tab.active, #COOL.active {
-    background-color: #cc0052;
-    box-shadow: 45px 0px 40px #ff8820 inset;
-    text-shadow: 2px 2px 4px #303030;
+.active {
+    background-color: var(--active-background);
+    box-shadow: 45px 0px 40px var(--active-gradient) inset;
+    text-shadow: 2px 2px 4px var(--text-shadows);
     scale: 1.05;
 }
 /*. . . . . . . . . . I LOVE THE VIEW */
 #COOL {
     font-weight: 700;
-    border: .5rem ridge #fff;
+    border: .5rem ridge var(--NAVBAR-texts);
     border-radius: 2rem;
     transition: .5s ease-out;
 }
 /*. . . . . . . . . . FOOTER */
 footer a:hover {
-    color: #fff;
-    background-color: #405DE6;
-    box-shadow: 45px 0px 40px #833AB4 inset;
-    text-shadow: 2px 2px 4px #303030;
+    background-color: var(--footer-hover-background);
+    box-shadow: 45px 0px 40px var(--footer-hover-gradient) inset;
+    text-shadow: 2px 2px 4px var(--text-shadows);
     scale: 1.05;
 }
 
@@ -97,7 +99,7 @@ footer a:hover {
 .tab-content {
     display: none;
     height: 100%;
-    color: #fff;
+    color: var(--tab-content-texts);
     padding: 8em 0;
 }
 .title {
@@ -105,10 +107,10 @@ footer a:hover {
     position: relative;
     transform: skewX(-40deg);
     left: -15rem;
-    background-color: #cc0033;
-    box-shadow: 100px 0px 40px #ff8820 inset;
-    border-right: 32px double #ff8820;
-    border-bottom: 4px solid #ff8820;
+    background-color: var(--active-background);
+    box-shadow: 100px 0px 40px var(--active-gradient) inset;
+    border-right: 32px double var(--active-gradient);
+    border-bottom: 4px solid var(--active-gradient);
     margin-bottom: 16px;
 }
 .title h1 {
@@ -120,8 +122,8 @@ footer a:hover {
     padding: 1em;
     text-indent: 2em;
     border-radius: 8px;
-    border: 2px double #fff;
-    background-color: rgba(0, 0 ,0 ,0.6);
+    border: 2px double var(--tab-content-texts);
+    background-color: var(--paragraph-transparent-bg);
     font-size: 2.5rem;
 }
 .paragraph p {
@@ -146,18 +148,15 @@ footer a:hover {
 #CREDITS {
     background: #fff url('../assets/pictures/luv-it.png') no-repeat fixed center center / cover;
 }
+#UNBEATABLE {
+    position: relative;
+    padding: 0 8%;
+    top: -5rem;
+}
 /* work in progress */
 #TRIANGLESQ {
-    padding: 0;
+    background: #fff url('../assets/pictures/pic3.png') no-repeat fixed center center / cover;
 }
-#TRIANGLESQ div {
-    background-color: #303030;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 /* This is styling connected to asset-setups definitions */
 .topic .icon {
     margin: 0px 8px;
